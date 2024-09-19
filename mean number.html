@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script>
+let count = parseInt(prompt("How many numbers would you like to average?"));
+
+
+let total = 0;
+
+
+for (let i = 1; i <= count; i++) {
+  let num = parseFloat(prompt(`Enter number ${i}:`));  
+  total += num;  
+}
+
+let mean = total / count;
+
+alert(`Total: ${total}`);
+alert(`Mean (average): ${mean}`);
+</script>
+</html>
