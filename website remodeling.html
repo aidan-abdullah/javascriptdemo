@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BERKSHIRE HATHAWAY INC.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Links Section */
+        .link-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Individual Link Box */
+        .link-box {
+            background: white;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .link-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .link-box h3 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+        .link-box a {
+            text-decoration: none;
+            color: #0073e6;
+            font-weight: bold;
+        }
+        .link-box a:hover {
+            color: #005bb5;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        .highlight {
+            color: #ff9900;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BERKSHIRE HATHAWAY INC.</h1>
+    <p>3555 Farnam Street, Omaha, NE 68131</p>
+</header>
+
+<div class="container">
+    <div class="link-section">
+        <div class="link-box">
+            <h3><a href="message.html">A Message from Warren E. Buffett</a></h3>
+        </div>
+        <div class="link-box">
+            <h3><a href="news/2024news.html">News Releases</a></h3>
+            <p>Updated August 3, 2024</p>
+        </div>
+        <div class="link-box">
+            <h3><a href="reports.html">Annual & Interim Reports</a></h3>
+            <p>Updated August 3, 2024</p>
+        </div>
+        <div class="link-box">
+            <h3><a href="sharehold.html">Annual Meeting Information</a></h3>
+            <p>Updated June 17, 2024</p>
+        </div>
+        <div class="link-box">
+            <h3><a href="http://www.sec.gov/cgi-bin/browse-edgar?company=berkshire+hathaway&amp;match=&amp;CIK=&amp;filenum=&amp;State=&amp;Country=&amp;SIC=&amp;owner=exclude&amp;Find=Find+Companies&amp;action=getcompany">Link to SEC Filings</a></h3>
+        </div>
+        <div class="link-box">
+            <h3><a href="bhenergy/bhenergypresentations.html">Berkshire Hathaway Energy Investor Presentations</a></h3>
+        </div>
+        <!-- Add additional boxes as needed, replicating the pattern above -->
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 1978-2024 <span class="highlight">Berkshire Hathaway Inc.</span> All rights reserved.</p>
+</footer>
+
+<script>
+    // Add some interactivity using JavaScript
+    document.querySelectorAll('.link-box').forEach(box => {
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = '#f0f0f0';
+        });
+        box.addEventListener('mouseout', () => {
+            box.style.backgroundColor = 'white';
+        });
+    });
+</script>
+
+</body>
+</html>
