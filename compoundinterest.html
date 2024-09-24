@@ -6,14 +6,15 @@ const interestRate = parseFloat(prompt("Enter the annual interest rate (e.g., 0.
 const desiredBalance = parseFloat(prompt("Enter the desired balance to reach: "));
 
 let year = 0;
-console.log(`Starting balance: £${currentBalance.toFixed(2)}`);
+let output = `Starting balance: £${currentBalance.toFixed(2)}\n`;
 
 while (currentBalance < desiredBalance) {
   year++;
-  currentBalance += currentBalance * interestRate;
-  console.log(`Year ${year}: New balance = £${currentBalance.toFixed(2)}`);
+  currentBalance += currentBalance * interestRate/100;
+  output += `Year ${year}: New balance = £${currentBalance.toFixed(2)}\n`;
 }
 
-console.log(`It took ${year} years to reach or exceed the desired balance of £${desiredBalance.toFixed(2)}`);
+output += `It took ${year} years to reach or exceed the desired balance of £${desiredBalance.toFixed(2)}`;
+alert(output);
 </script>
 </html>
