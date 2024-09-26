@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Berkshire Hathaway Inc.</title>
+    <style>
+        body { 
+            font-family: 'Verdana', sans-serif; 
+            margin: 0; 
+            background: #f0f0f0; 
+            color: #333; 
+            text-align: center; 
+        }
+        header { 
+            background: #004080; 
+            color: #fff; 
+            padding: 10px 0; 
+        }
+        nav a { 
+            color: #fff; 
+            margin: 0 10px; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .card { 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            padding: 10px; 
+            margin: 10px auto; 
+            width: 80%; 
+            background: #e6f2ff; 
+            cursor: pointer; 
+            font-family: 'Arial', sans-serif;
+        }
+        footer { 
+            background: #004080; 
+            color: #fff; 
+            padding: 10px; 
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Berkshire Hathaway Inc.</h1>
+        <nav><a href="https://en.wikipedia.org/wiki/Special:Random">About</a><a href="https://youtu.be/rW6FJHTjzO0?si=M4hvf_rHvW2r1UdR">News</a><a href="#">Reports</a><a href="#">Contact</a></nav>
+    </header>
+    
+    <div id="card-container"></div>
+
+    <footer>&copy; 2024 Berkshire Hathaway Inc.</footer>
+
+    <script>
+        const data = [
+            { title: 'Message from Warren Buffett', description: 'Latest message from Warren Buffett.' },
+            { title: 'News Releases', description: 'Stay updated with the latest news.' },
+            { title: 'Annual Reports', description: 'Access our annual reports.' },
+            { title: 'Meeting Information', description: 'Annual meeting details.' }
+        ];
+
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+            document.getElementById('card-container').appendChild(card);
+        });
+    </script>
+</body>
+</html>
