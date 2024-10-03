@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkshire Hathaway Inc.</title>
+
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Verdana', sans-serif;
+            background: #f0f0f0;
+            color: #333;
+        }
+        header { 
+            background: #004080;
+            color: #fff;
+            padding: 20px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card {
+            cursor: pointer;
+            background: #e6f2ff;
+        }
+        footer {
+            background: #004080;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header class="text-center">
+        <h1>Berkshire Hathaway Inc.</h1>
+        <nav>
+            <a href="https://en.wikipedia.org/wiki/Special:Random">About</a>
+            <a href="#">News</a>
+            <a href="#">Reports</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+
+    <div class="container mt-4">
+        <div id="card-container" class="row"></div>
+    </div>
+
+
+    <footer class="text-center">
+        &copy; 2024 Berkshire Hathaway Inc.
+    </footer>
+
+
+    <script>
+        const data = [
+            { title: 'Message from Warren Buffett', description: 'Latest message from Warren Buffett.' },
+            { title: 'News Releases', description: 'Stay updated with the latest news.' },
+            { title: 'Annual Reports', description: 'Access our annual reports.' },
+            { title: 'Meeting Information', description: 'Annual meeting details.' }
+        ];
+
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card col-md-5 mx-auto mb-4 p-3 shadow-sm';
+            card.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+            document.getElementById('card-container').appendChild(card);
+        });
+    </script>
+</body>
+</html>
