@@ -1,62 +1,90 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berkshire Hathaway Inc.</title>
-
+    
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body { 
+        body {
             font-family: 'Verdana', sans-serif;
-            background: #f0f0f0;
+            background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
-        header { 
-            background: #004080;
+        header {
+            background-color: #002855;
             color: #fff;
-            padding: 100px 0;
+            padding: 70px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 60px;
+            font-weight: bold;
         }
         nav a {
             color: #fff;
-            margin: 0 20px;
+            margin: 0 30px;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: background 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            background-color: #004080;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 50px 15px;
         }
         .card {
-            cursor: pointer;
-            background: #e6f2ff;
-            padding: 30px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
-            margin-top: 30px;
         }
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .card p {
+            font-size: 16px;
+            color: #555;
         }
         footer {
-            background: #004080;
+            background-color: #002855;
             color: #fff;
             padding: 30px;
-            margin-top: 20px;
-        }
-        h3 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        p {
-            font-size: 16px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <header class="text-center">
-        <h1 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 75px;">Berkshire Hathaway Inc.</h1>
-        <nav style="font-family:Arial, Helvetica, sans-serif;font-size: 25px;">
+
+    <header>
+        <h1>Berkshire Hathaway Inc.</h1>
+        <nav>
             <a href="https://en.wikipedia.org/wiki/Special:Random">About</a>
             <a href="#">News</a>
             <a href="#">Reports</a>
@@ -64,28 +92,64 @@
         </nav>
     </header>
 
+   
     <div class="container">
-        <div id="card-container" class="row"></div>
+        <div id="card-container" class="row">
+    
+        </div>
     </div>
-    <footer class="text-center">
-        &copy; 2024 Berkshire Hathaway Inc.
+
+  
+    <footer>
+        &copy; 2024 Berkshire Hathaway Inc. All rights reserved.
     </footer>
 
     <script>
+       
         const data = [
-            { title: 'Message from Warren Buffett', description: 'Latest message from Warren Buffett.' },
-            { title: 'News Releases', description: 'Stay updated with the latest news.' },
-            { title: 'Annual Reports', description: 'Access our annual reports.' },
-            { title: 'Meeting Information', description: 'Annual meeting details.' }
+            { 
+                title: 'Message from Warren Buffett', 
+                description: 'Latest message from Warren Buffett.', 
+                img: 'https://th.bing.com/th/id/OIP.HqFsvM_4EIs2fyCfPwiMQgHaE8?w=286&h=191&c=7&r=0&o=5&dpr=2&pid=1.7',
+                link: 'https://www.berkshirehathaway.com/message.html' 
+            },
+            { 
+                title: 'News Releases', 
+                description: 'Stay updated with the latest news.', 
+                img: 'https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg', 
+                link: 'https://www.berkshirehathaway.com/news/2024news.html' 
+            },
+            { 
+                title: 'Annual Reports', 
+                description: 'Access our annual reports.', 
+                img: 'https://th.bing.com/th/id/OIP.rLuboNdiq_t8siQI3JaUEgHaF-?w=255&h=180&c=7&r=0&o=5&dpr=2&pid=1.7', 
+                link: 'https://www.berkshirehathaway.com/reports.html' 
+            },
+            { 
+                title: 'Meeting Information', 
+                description: 'Annual meeting details.', 
+                img: 'https://th.bing.com/th/id/OIP.SPPakfAng8meHeyOtxuIeAHaEK?w=309&h=180&c=7&r=0&o=5&dpr=2&pid=1.7', 
+                link: 'https://www.berkshirehathaway.com/sharehold.html' 
+            }
         ];
 
+        
         data.forEach(item => {
             const card = document.createElement('div');
             card.className = 'card col-md-5 col-md-offset-1';
-            card.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+
+            card.innerHTML = `
+                <a href="${item.link}" style="text-decoration: none; color: inherit;">
+                    <img src="${item.img}" alt="${item.title}" class="img-responsive">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </a>
+            `;
+            
             document.getElementById('card-container').appendChild(card);
         });
     </script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
