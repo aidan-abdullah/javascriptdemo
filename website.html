@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Berkshire Hathaway Inc.</title>
-    
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -32,33 +30,43 @@
             font-size: 18px;
             font-weight: 500;
             padding: 10px 15px;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
         nav a:hover, nav a.active {
             background-color: #004080;
             border-radius: 5px;
+            transform: scale(1.1);
         }
         .container {
             padding: 50px 15px;
         }
+      
         .card {
             background-color: #fff;
             border: 1px solid #ddd;
             padding: 20px;
             border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
+            height: 400px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer; 
         }
+        
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: #f0f8ff; 
         }
+        
         .card img {
             max-width: 100%;
-            height: auto;
+            height: 180px;
             border-radius: 5px;
-            margin-bottom: 15px;
+            object-fit: cover;
         }
         .card h3 {
             font-size: 22px;
@@ -68,6 +76,7 @@
         .card p {
             font-size: 16px;
             color: #555;
+            flex-grow: 1; 
         }
         footer {
             background-color: #002855;
@@ -77,10 +86,29 @@
             text-align: center;
             font-size: 14px;
         }
+        
+        #scroll-top-btn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #002855;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #scroll-top-btn:hover {
+            background-color: #004080;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body>
-
 
     <header>
         <h1>Berkshire Hathaway Inc.</h1>
@@ -92,20 +120,16 @@
         </nav>
     </header>
 
-   
     <div class="container">
-        <div id="card-container" class="row">
-    
-        </div>
+        <div id="card-container" class="row"></div>
     </div>
 
-  
     <footer>
         &copy; 2024 Berkshire Hathaway Inc. All rights reserved.
     </footer>
 
     <script>
-       
+        
         const data = [
             { 
                 title: 'Message from Warren Buffett', 
@@ -145,11 +169,52 @@
                     <p>${item.description}</p>
                 </a>
             `;
-            
+
             document.getElementById('card-container').appendChild(card);
         });
-    </script>
 
+       
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        
+        const scrollTopBtn = document.createElement('button');
+        scrollTopBtn.id = 'scroll-top-btn';
+        scrollTopBtn.innerHTML = '⬆'; 
+        document.body.appendChild(scrollTopBtn);
+
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        };
+
+        
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                window.location.href = card.querySelector('a').href;
+            });
+        });
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
